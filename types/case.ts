@@ -1,13 +1,7 @@
 import { ReviewerListItem, UserListItem } from "./user";
 import { Review } from "./review";
-import {
-  FaustNumber,
-  ID,
-  ISO8601Date,
-  ISO8601Timestamp,
-  WeekCode,
-  ISBN,
-} from "./general";
+import { ID, ISO8601Date, ISO8601Timestamp, WeekCode } from "./general";
+import { Record } from "./record";
 
 export enum CaseStatus {
   REQUESTED = "REQUESTED",
@@ -24,6 +18,15 @@ export enum CaseStatus {
   EXPORTED = "EXPORTED",
 }
 
+export enum CaseExtraField {
+  BKM = "BKM", // BKM-vurdering
+  KEYWORDS = "KEYWORDS", // Emneord
+  AGE_RANGE = "AGE_RANGE", // Alder
+  GENRE = "GENRE", // Genre
+  TARGET_AUDIENCE = "TARGET_AUDIENCE", // Niveau/målgruppe
+  META_COMPASS = "META_COMPASS", // Metakompas
+}
+
 export interface CaseMessage {
   timestamp: ISO8601Timestamp;
   body: string;
@@ -32,25 +35,23 @@ export interface CaseMessage {
 
 export interface CaseListItem {
   id: ID;
-  status: CaseStatus;
+  status: CaseStatus; 
   title: string;
   assignedReviewer: ReviewerListItem;
-  assignedDate: ISO8601Date;
-  dueDate: ISO8601Date;
+  assignedDate: ISO8601Date; 
+  dueDate: ISO8601Date; // Angiv afleveringsfrist
   weekCode: WeekCode;
 }
 
 export interface Case extends CaseListItem {
-  faust: FaustNumber;
-  author: string;
-  series: string;
-  publisher: string;
-  corporation: string;
-  messages: CaseMessage[];
-  editor: UserListItem;
-  barcode?: string;
-  technicalInfo?: string;
-  dk5: string;
-  isbn: ISBN;
-  review: Review;
+  record: Record;
+  messages: CaseMessage[]; // Beskeder
+  editor: UserListItem; // Redaktør
+  review?: Review; 
+  paymentCode: ID; // Betalingskode
+  paymentCodeShort: ID; // Betalingskode for kort om
+  paymentCodeMetaCompass: ID; // Betalingskode for metakompas
+  extraFields: { [key in CaseExtraField]: boolean };
+  // Used for submitting cases using the form
+  newMessage?: string
 }

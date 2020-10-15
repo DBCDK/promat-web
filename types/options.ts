@@ -1,15 +1,44 @@
+import { MediaType } from "./general";
+
 export interface Options {
-  genre: []; // TBD
+  // Genre
+  genre: {
+    [key in string]: string;
+  };
 
-  bkmType: []; // TBD
+  // BKM Type
+  bkmType: {
+    [key in string]: string;
+  };
 
-  targetAudience: []; // TBD
+  // Niveau/målgruppe
+  targetAudience: {
+    [key in string]: string;
+  };
 
-  subjectArea: []; // TBD
+  // Emneområde
+  subjectArea: {
+    [key in string]: string;
+  };
 
-  paymentCodeByType: {}; // TBD
+  // Betalingskode
+  paymentCodeByType: {
+    [key in MediaType]: {
+      [key in string]: string;
+    };
+  };
 
-  paymentCodeShortByType: {}; // TBD
+  // Betalingskode for kort om
+  paymentCodeShortByType: {
+    [key in MediaType]: {
+      [key in string]: string;
+    };
+  };
 
-  paymentCodeMetaCompassByType: {}; // TBD
+  // Betalingskode for metakompas
+  paymentCodeMetaCompassByType: {
+    [key in MediaType]: {
+      [key in string]: string;
+    };
+  };
 }
