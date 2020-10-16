@@ -1,5 +1,5 @@
 import { CaseStatus } from "./case";
-import { FaustNumber, ISBN, WeekCode } from "./general";
+import { FaustNumber, ISBN, MediaType, WeekCode } from "./general";
 
 enum RecordType {
     SINGLE = "SINGLE", // singlepost
@@ -13,6 +13,7 @@ export interface RecordListItem {
   author: string; // Forfatter
   faust: FaustNumber; // Faustnr.
   weekCode: WeekCode; // Ugekode
+  mediaType: MediaType // Materialetype
 }
 
 export interface Record extends RecordListItem {
