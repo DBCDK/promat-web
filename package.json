@@ -1,0 +1,15 @@
+{
+  "name": "@promat-web/shared",
+  "version": "0.0.1",
+  "description": "Shared library for the promat web project",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DBCDK/promat-web-shared.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DBCDK/promat-web-shared/issues"
+  },
+  "homepage": "https://github.com/DBCDK/promat-web-shared#readme"
+}
