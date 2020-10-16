@@ -45,7 +45,7 @@ export interface CaseListItem {
 
 export interface Case extends CaseListItem {
   record: Record;
-  messages: CaseMessage[]; // Beskeder
+  messages?: CaseMessage[]; // Beskeder
   editor: UserListItem; // Redaktør
   review?: Review; 
   paymentCode: ID; // Betalingskode
