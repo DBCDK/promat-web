@@ -1,6 +1,12 @@
-import { ReviewerListItem, UserListItem } from "./user";
+import { UserListItem } from "./user";
 import { Review } from "./review";
-import { ID, ISO8601Date, ISO8601Timestamp, WeekCode } from "./general";
+import {
+  FaustNumber,
+  ID,
+  ISO8601Date,
+  ISO8601Timestamp,
+  WeekCode,
+} from "./general";
 import { Record } from "./record";
 
 export enum CaseStatus {
@@ -35,23 +41,45 @@ export interface CaseMessage {
 
 export interface CaseListItem {
   id: ID;
-  status: CaseStatus; 
+  status: CaseStatus;
   title: string;
-  assignedReviewer: ReviewerListItem;
-  assignedDate: ISO8601Date; 
+  reviewer: UserListItem;
+  assignedDate: ISO8601Date;
   dueDate: ISO8601Date; // Angiv afleveringsfrist
   weekCode: WeekCode;
 }
 
-export interface Case extends CaseListItem {
-  record: Record;
-  messages?: CaseMessage[]; // Beskeder
-  editor: UserListItem; // Redaktør
-  review?: Review; 
+interface CaseBasicDetails {
+  title: string;
   paymentCode: ID; // Betalingskode
   paymentCodeShort: ID; // Betalingskode for kort om
   paymentCodeMetaCompass: ID; // Betalingskode for metakompas
   extraFields: { [key in CaseExtraField]: boolean };
-  // Used for submitting cases using the form
-  newMessage?: string
+  assignedDate: ISO8601Date;
+  dueDate: ISO8601Date; // Angiv afleveringsfrist
+  weekCode: WeekCode;
+}
+
+// Used when creating cases
+export interface CaseCreateRequest extends CaseBasicDetails {
+  reviewerId: ID;
+  faust: FaustNumber;
+  newMessage?: string;
+}
+
+// Used when updating cases
+export interface CaseUpdateRequest extends CaseBasicDetails {
+  newMessage?: string;
+  status: CaseStatus;
+}
+
+// Used when retrieving an existing case
+export interface CaseResponse extends CaseBasicDetails {
+  id: ID;
+  editor: UserListItem; // Redaktør
+  messages?: CaseMessage[]; // Beskeder
+  reviewer: UserListItem; // Anmelder
+  record: Record;
+  review?: Review;
+  status: CaseStatus;
 }

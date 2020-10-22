@@ -20,7 +20,7 @@ export enum ReviewerType {
   PUBLIC = "PUBLIC", // Offentligt bibliotek
   SCHOOL = "SCHOOL", // Skolebibliotek
   CHILDREN = "CHILDREN", // Børn
-  ADULTS = "ADULTS", // Voksne 
+  ADULTS = "ADULTS", // Voksne
 }
 
 export interface Address {
@@ -38,25 +38,19 @@ export interface UserListItem {
   email: Email; // Email
   role: UserRole; //Brugertype
   status: UserStatus; // Status
-}
-
-export interface ReviewerListItem extends UserListItem {
   institutionName: string; // Institution
   generalComment: string; // Generel kommentar
 }
 
-export interface Reviewer extends ReviewerListItem {
+interface UserBasicDetails extends UserListItem {
   firstName: string; // Fornavn
   lastName: string; // Efternavn
   nameExtra: string; // Navnehenvisning 2
-  partner: ID; // Partner
-  writeAccess: boolean; // Skriverettigheder
+  hasWriteAccess: boolean; // Skriverettigheder
   payrollNumber: string; // Lønnummer
   activeAddressType: AddressType; // Anvend adresse
   privateAddress: Address;
-  institutionName: string; // Institution
   institutionAddress: Address;
-  username: string; // Brugernavn
   favoriteMediaType: MediaType; // Yndlingsmaterialetype
   autobiography: string; // Selvbiografi
   subjectAreasOfInterest: {
@@ -70,11 +64,30 @@ export interface Reviewer extends ReviewerListItem {
     start: ISO8601Timestamp;
     end: ISO8601Timestamp;
   };
+}
+
+// Used when updating/creating a reviewer
+export interface UserCreateOrUpdateRequest
+  extends Omit<UserBasicDetails, "id"> {
+  partnerId: ID; // Partner
+}
+
+// Used when retrieving reviewer details
+export interface UserResponse extends UserListItem, UserBasicDetails {
   caseCapacity?: {
-    new: number;  // Nye sager
+    new: number; // Nye sager
     inProgress: number; // Igangværende sager
     rejected: number; // Afviste sager
   };
-  password?: string; // Password
-  passwordRepeated?: string; // Gentag Password
+  partner: UserListItem; // Partner
 }
+
+// interface OauthRedirectParams {
+//   code: string;
+// }
+
+// interface OauthTokenResponse {
+//   access_token: string;
+//   token_type: "Bearer";
+//    : number;
+// }
