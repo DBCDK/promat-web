@@ -1,5 +1,6 @@
 import { MediaType } from "../types/general";
 import { Options } from "../types/options";
+import subjectAreas from './subjectAreas'
 
 export const mockOptions: Options = {
   genre: {
@@ -12,11 +13,18 @@ export const mockOptions: Options = {
     a: "12",
   },
   targetAudience: {
-    a: "12",
+    adult: "Voksen",
+    kids: "Børn / Skole",
+    adultKids: "Voksen og Børn",
   },
-  subjectArea: {
-    a: "12",
-  },
+  subjectArea: subjectAreas
+  // {
+  //   testA: "Voksen > 10-19 > 12 Erkendelsesteori",
+  //   testB: "Voksen > 10-19 > 13 Bibliografi",
+  //   testC: "Barn > 10-19 > 10 Bibliometri",
+  //   testD: "Barn > 10-19 > 11 Litografi",
+  // }
+  ,
   paymentCodeByType: {
     [MediaType.BOOK]: {
       aa: "123",
