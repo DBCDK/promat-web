@@ -1,7 +1,7 @@
 import { MediaType } from "../types/general";
 import { Options } from "../types/options";
 
-const a: Options = {
+export const mockOptions: Options = {
   genre: {
     a: "12",
     123: "12",
