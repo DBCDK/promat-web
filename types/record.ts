@@ -1,7 +1,7 @@
 import { CaseStatus } from "./case";
 import { FaustNumber, ISBN, MediaType, WeekCode } from "./general";
 
-enum RecordType {
+export enum RecordType {
     SINGLE = "SINGLE", // singlepost
     VOLUME = "VOLUME" // bind
 }

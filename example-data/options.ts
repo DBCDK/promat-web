@@ -1,5 +1,6 @@
 import { MediaType } from "../types/general";
 import { Options } from "../types/options";
+import subjectAreas from './subjectAreas'
 
 export const mockOptions: Options = {
   genre: {
@@ -12,11 +13,11 @@ export const mockOptions: Options = {
     a: "12",
   },
   targetAudience: {
-    a: "12",
+    adult: "Voksen",
+    kids: "Børn / Skole",
+    adultKids: "Voksen og Børn",
   },
-  subjectArea: {
-    a: "12",
-  },
+  subjectArea: subjectAreas,
   paymentCodeByType: {
     [MediaType.BOOK]: {
       aa: "123",
