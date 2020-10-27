@@ -3,7 +3,7 @@ import { Email, ID, ISO8601Timestamp, MediaType } from "./general";
 export enum UserRole {
   ADMIN = "ADMIN",
   EDITOR = "EDITOR", // Redaktør
-  REVIWER = "REVIEWER", // Anmelder
+  REVIEWER = "REVIEWER", // Anmelder
 }
 
 export enum UserStatus {
@@ -79,7 +79,7 @@ export interface UserResponse extends UserListItem, UserBasicDetails {
     inProgress: number; // Igangværende sager
     rejected: number; // Afviste sager
   };
-  partner: UserListItem; // Partner
+  partner?: UserListItem; // Partner
 }
 
 // interface OauthRedirectParams {
