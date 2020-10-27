@@ -17,14 +17,7 @@ export const mockOptions: Options = {
     kids: "Børn / Skole",
     adultKids: "Voksen og Børn",
   },
-  subjectArea: subjectAreas
-  // {
-  //   testA: "Voksen > 10-19 > 12 Erkendelsesteori",
-  //   testB: "Voksen > 10-19 > 13 Bibliografi",
-  //   testC: "Barn > 10-19 > 10 Bibliometri",
-  //   testD: "Barn > 10-19 > 11 Litografi",
-  // }
-  ,
+  subjectArea: subjectAreas,
   paymentCodeByType: {
     [MediaType.BOOK]: {
       aa: "123",
