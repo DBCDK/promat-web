@@ -74,7 +74,7 @@ export interface UserCreateOrUpdateRequest
 
 // Used when retrieving reviewer details
 export interface UserResponse extends UserListItem, UserBasicDetails {
-  caseCapacity?: {
+  caseCapacity: {
     new: number; // Nye sager
     inProgress: number; // Igangværende sager
     rejected: number; // Afviste sager

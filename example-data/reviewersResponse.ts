@@ -56,6 +56,20 @@ export const reviewersResponse: UserResponse[] = [
       phone: "23423423",
       email: "asdas@2qwe.dk",
     },
+    partner: {
+      id: "12347",
+      name: "Hans Hansen",
+      email: "hans@hansen.test",
+      role: UserRole.REVIEWER,
+      status: UserStatus.ACTIVE,
+      institutionName: "Biblo 123",
+      generalComment: "Han er altid hurtig",
+    },
+    caseCapacity: {
+      new: 0,
+      inProgress: 12,
+      rejected: 3,
+    },
   },
   {
     id: "12345",
@@ -113,6 +127,11 @@ export const reviewersResponse: UserResponse[] = [
       phone: "23423423",
       email: "asdas@2qwe.dk",
     },
+    caseCapacity: {
+      new: 0,
+      inProgress: 12,
+      rejected: 3,
+    },
   },
   {
     id: "12346",
@@ -161,6 +180,11 @@ export const reviewersResponse: UserResponse[] = [
       streetExtra: "",
       phone: "23423423",
       email: "asdas@2qwe.dk",
+    },
+    caseCapacity: {
+      new: 0,
+      inProgress: 12,
+      rejected: 3,
     },
   },
   {
@@ -215,6 +239,11 @@ export const reviewersResponse: UserResponse[] = [
       phone: "23423423",
       email: "asdas@2qwe.dk",
     },
+    caseCapacity: {
+      new: 0,
+      inProgress: 12,
+      rejected: 3,
+    },
   },
   {
     id: "12348",
@@ -263,6 +292,20 @@ export const reviewersResponse: UserResponse[] = [
       streetExtra: "",
       phone: "23423423",
       email: "asdas@2qwe.dk",
+    },
+    partner: {
+      id: "12347",
+      name: "Hans Hansen",
+      email: "hans@hansen.test",
+      role: UserRole.REVIEWER,
+      status: UserStatus.ACTIVE,
+      institutionName: "Biblo 123",
+      generalComment: "Han er altid hurtig",
+    },
+    caseCapacity: {
+      new: 0,
+      inProgress: 12,
+      rejected: 3,
     },
   },
   {
@@ -317,6 +360,11 @@ export const reviewersResponse: UserResponse[] = [
       phone: "23423423",
       email: "asdas@2qwe.dk",
     },
+    caseCapacity: {
+      new: 0,
+      inProgress: 12,
+      rejected: 3,
+    },
   },
   {
     id: "12350",
@@ -370,6 +418,20 @@ export const reviewersResponse: UserResponse[] = [
       phone: "23423423",
       email: "asdas@2qwe.dk",
     },
+    partner: {
+      id: "12347",
+      name: "Hans Hansen",
+      email: "hans@hansen.test",
+      role: UserRole.REVIEWER,
+      status: UserStatus.ACTIVE,
+      institutionName: "Biblo 123",
+      generalComment: "Han er altid hurtig",
+    },
+    caseCapacity: {
+      new: 0,
+      inProgress: 12,
+      rejected: 3,
+    },
   },
   {
     id: "12351",
@@ -419,6 +481,11 @@ export const reviewersResponse: UserResponse[] = [
       phone: "23423423",
       email: "asdas@2qwe.dk",
     },
+    caseCapacity: {
+      new: 0,
+      inProgress: 12,
+      rejected: 3,
+    },
   },
   {
     id: "12352",
@@ -463,6 +530,11 @@ export const reviewersResponse: UserResponse[] = [
       streetExtra: "",
       phone: "23423423",
       email: "asdas@2qwe.dk",
+    },
+    caseCapacity: {
+      new: 0,
+      inProgress: 12,
+      rejected: 3,
     },
   },
   {
@@ -521,6 +593,11 @@ export const reviewersResponse: UserResponse[] = [
       phone: "23423423",
       email: "asdas@2qwe.dk",
     },
+    caseCapacity: {
+      new: 0,
+      inProgress: 12,
+      rejected: 3,
+    },
   },
   {
     id: "12354",
@@ -573,6 +650,11 @@ export const reviewersResponse: UserResponse[] = [
       streetExtra: "",
       phone: "23423423",
       email: "asdas@2qwe.dk",
+    },
+    caseCapacity: {
+      new: 0,
+      inProgress: 12,
+      rejected: 3,
     },
   },
 ];
