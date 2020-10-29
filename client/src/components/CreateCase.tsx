@@ -153,7 +153,7 @@ function MaterialMetadata(props) {
   
         <Col sm={12} className="padding-20">
           <h2>Afleveringsfrist</h2>
-          <SetDeadline selected={newCase.deadline} onSelect={(e) => setNewCase({...newCase, deadline:e.target.value})} />
+          <SetDeadline selected={newCase.deadline} onSelect={(e) => setNewCase({...newCase, deadline:new Date(e.target.value).toISOString()})} />
         </Col>
   
         <Col sm={12} className="bg-light-grey padding-20">
